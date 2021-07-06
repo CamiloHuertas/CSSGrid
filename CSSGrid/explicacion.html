@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explicaciones</title>
+  </head>
+  <body>
+    <h1>Capitulo 1</h1>
+    <p>nada</p>
+
+    <h1>Capitulo 2 - Grid Explicita</h1>
+
+    <h4>fr: es una nueva medida, significa el espacio sobrante</h4>
+
+    <p>display: grid; Declara estado grid (se le aplica al padre)</p>
+    <p>
+      grid-template-columns: Permite definir numero de columnas (su valor afecta
+      el width
+    </p>
+    <p>
+      grid-template-rows: permite definir numero de filas (su valor afecta el
+      height)
+    </p>
+    <p>
+      gap: determina un espacio entre grid items, su primer valor es arriba y
+      abajo y el segudno es derecha e izquierda
+    </p>
+
+    <h4>Metodos mas avanzados</h4>
+
+    <ul>
+      <li>
+        repeat(): este se usa en grid-template-columns y rows, recibe 2 valores,
+        el primero es cuantas columns o rows queremos y el segundo es cuanto
+        queremos que mida cada una
+      </li>
+    </ul>
+
+    <h1>Capitulo 3 -Posicionamiento con grid lines</h1>
+
+    <h4>
+      Esta la propiedad span que indica desde su " posicion actual hasta", pero
+      hasta donde le indicemos mide en grid cells, no en grid lines
+    </h4>
+
+    <ul>
+      Todas dicen de que linea a que linea quiero que se ocupe
+      <li>Grid-row-start:</li>
+      <li>Grid-column-start:</li>
+      <li>Grid-row-end:</li>
+      <li>Grid-colum-end:</li>
+      <br />
+
+      <li>
+        grid-row: esto acorta grid row start y end, recibe como valor grid-row:
+        start / end
+      </li>
+      <li>
+        grid-column: esto acorta grid column start y end, recibe como valor
+        grid-column: start / end
+
+        <p>
+          Tambien le podemos decir que ocupe mas espacio de la grid si ponemos
+          mas valor al end que 1 grid cell
+        </p>
+      </li>
+
+      <li>
+        grid-area: esto acorta grid-row y grid-column, primero va el valor del
+        grid-row y despues el del grid-column
+      </li>
+    </ul>
+
+    <h1>Capitulo 4 - Posicionamiento con nombres de grid lines</h1>
+
+    <p>
+      Esto es una perdida de tiempo y te confunde mas entonces no anotare nada
+    </p>
+
+    <h1>Capitulo 5- Posicionamiento con grid Areas</h1>
+
+    <p>
+      Se utiliza el grid-template-areas para ponerle nombres a areas de nuestra
+      grid, se pone en el css como queremos que vaya nuestro html con nombre de
+      las clases entre comillas
+    </p>
+
+    <p>
+      Para que esto funcione se le debe poner al elemento una propiedad
+      grid-area que como valor tenga el mismo valor de su clase
+    </p>
+
+    <p>
+      Tambien si queremos dejar algo en blanco sin que lo ocupe un elemento, se
+      reemplaza esa posicion por un .
+    </p>
+
+    <h1>Capitulo 6 - Grid Implícita. Grids de bloque y de línea</h1>
+
+    <p>
+      Como en css normal, a los inline no les afecta casi ninguna propiedad,
+      para declarar una grid inline se hace con inline-grid
+    </p>
+
+    <h1>Capitulo 7 - Flujo de la grid (grid flow)</h1>
+
+    <h4>Grid Auto flow</h4>
+    <p>
+      Esta tiene como propiedad estandar row. Lo que hace es cambiar la
+      orientacion de la grid, como un flex direction de flexbox
+    </p>
+
+    <h4>Grid-auto-rows:</h4>
+    <p>
+      Esta propiedad afecta a las rows de la grid implicita, afecta
+      especificamente su altura
+    </p>
+    <h4>Grid-auto-columns:</h4>
+    <p>
+      Esta propiedad afecta a las columns de la grid implicita, afecta
+      especificamente su anchura
+    </p>
+
+    <h1>Capitulo 8 - Flujo denso de la grid</h1>
+
+    <p>
+      Si se le pide a un cell grid que ocupe mas cell grids de las que puede
+      permitir la grid, lo va a mandar hacia abajo, no creara otra columna
+    </p>
+
+    <p>
+      Si despues de mover una grid cell o expandirla y quedan espacios sin
+      rellenar, añadiendo la palabra "dense" a la propiedad grid auto flow se
+      arregla, moviendo las cells debajo de este espacio a ese lugar
+    </p>
+
+    <h1>Capitulo 9 - Grid Layers: Celdas en capas (superposicion)</h1>
+
+    <p>Siempre que se organize una cell por grid lines se va a sobreponer</p>
+
+    <h1>Capitulo 10 - Ordenamiento de grid items</h1>
+
+    <p>
+      La propiedad order tiene como valor definido 0, este se puede cambiar a
+      negativos o positivos
+    </p>
+
+    <p>
+      justify-items: sirve para posicionar los elementos hijo, tiene como valor
+      definido stretch
+      <br />
+      tiene los mismos valores de flexbox sin el flex, center, end, start
+    </p>
+
+    <p>align-items: tambien tiene los valores de flexbox</p>
+
+    <p></p>
+      Si queremos posicionar un elemento especifico se usa justify-self y
+      align-self
+    </p>
+
+    <h1>Capitulo 11 - Alineacion de grid tracks</h1>
+
+    <p>Justify-content: mueve todo el track, no afecta a los elementos hijo</p>
+    <br>
+    <p>Tiene las mismas propiedades del Justify-content de flexbox </p>
+
+    <p>align-content: mueve todo el track en el eje Y</p>
+
+    <h1>Capitulo 12 - Tamaños max y min de grid tracks</h1>
+  
+    <p>Para declarar cuanto ocupa cada columna se puede utilizar la funcion minmax(), recibe 2 valores, el primero el valor minimo de cada columna y el max el maximo de cada columna</p>
+
+    <p>Como valor del min se puede poner min-content, que significa que se adaptara al tamaño minimo que tenga el contenido</p>
+
+    <p>min-content: la columna se adapta al contenido minimo que tenga</p>
+    <p>max-content: la columna se adapta al contenido maximo que tenga</p>
+    
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias voluptatibus ad veritatis nulla natus repellendus eius ducimus aspernatur quos impedit vitae cupiditate, beatae ab, velit harum cumque placeat quidem esse.</p>
+
+  </body>
+</html>
